@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create DAO</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e1e2f, #141421);
+            color: #fff;
+            overflow-x: hidden;
+        }
+        header {
+            padding: 1rem;
+            text-align: center;
+            background: #141421;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        header h1 {
+            font-size: 2rem;
+            color: #f9fdff;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .form-section {
+            flex: 1;
+            max-width: 450px;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .form-section h2 {
+            margin-bottom: 1.5rem;
+            color: #fcfcfc;
+        }
+        .form-section label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        .form-section input, .form-section select {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 5px;
+            background: #0f0f0f;
+            color: #fff;
+        }
+        .form-section button {
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 1rem;
+            background: rgb(255, 252, 252);
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .form-section button:hover {
+            transform: scale(1.05);
+        }
+        .preview-section {
+            flex: 1;
+            max-width: 450px;
+            margin-left: 2rem;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .preview-section h2 {
+            margin-bottom: 1.5rem;
+            color: #feffff;
+        }
+        .preview-box {
+            padding: 1rem;
+            background: #050505;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            color: #ddd;
+            font-size: 0.9rem;
+        }
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .background-animation span {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: #fdffff;
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        .button2 {
+            width: 20%;
+            padding: 1rem;
+            font-size: 1rem;
+            background: #0d0d0d;
+            border: none;
+            border-radius: 5px;
+            color: #f4f1f1;
+            cursor: pointer;
+            transition: transform 0.3s;
+            margin: 2rem auto;
+            display: block;
+            text-align: center;
+        }
+        .button2:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Create Your DAO</h1>
+    </header>
+    <div class="background-animation">
+        <span style="top: 10%; left: 20%; animation-delay: 0s;"></span>
+        <span style="top: 50%; left: 80%; animation-delay: 1s;"></span>
+        <span style="top: 30%; left: 50%; animation-delay: 2s;"></span>
+    </div>
+    <div class="container">
+        <div class="form-section">
+            <h2>DAO Configuration</h2>
+            <label for="dao-name">DAO Name</label>
+            <input type="text" id="dao-name" placeholder="Enter your DAO name">
+            <label for="dao-purpose">Purpose</label>
+            <input type="text" id="dao-purpose" placeholder="Describe your DAO's purpose">
+            <label for="token-details">Token Details</label>
+            <input type="text" id="token-details" placeholder="Define your token details">
+            <label for="voting-mechanism">Voting Mechanism</label>
+            <select id="voting-mechanism">
+                <option value="simple">Simple Majority</option>
+                <option value="weighted">Weighted Voting</option>
+                <option value="quadratic">Quadratic Voting</option>
+            </select>
+            <button onclick="window.location.href='create-dao.html'">Create DAO</button>
+        </div>
+        <div class="preview-section">
+            <h2>Preview</h2>
+            <div class="preview-box">
+                DAO Name: <span id="preview-dao-name">N/A</span><br>
+                Purpose: <span id="preview-dao-purpose">N/A</span><br>
+                Token Details: <span id="preview-token-details">N/A</span><br>
+                Voting Mechanism: <span id="preview-voting-mechanism">N/A</span>
+            </div>
+        </div>
+    </div>
+    <button class="button2" onclick="window.location.href='staking.html'">Go to Staking</button>
+</body>
+</html>
